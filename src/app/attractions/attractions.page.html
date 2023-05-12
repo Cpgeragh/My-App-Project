@@ -1,0 +1,124 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home" routerDirection="back" class="home-button">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Attractions
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="attraction-grid-container">
+  
+  <div class="attraction-scroll">
+
+    <div class="attraction-grid">
+
+      <!-- Hotel 1 -->
+      <div class="attraction-box">
+        <img src="https://scontent-dub4-1.xx.fbcdn.net/v/t1.6435-9/86643507_203473091012032_7895118525432332288_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9267fe&_nc_ohc=6H0vJD5gNoAAX88DIdv&_nc_ht=scontent-dub4-1.xx&oh=00_AfD89f-9-uL9IidrDZpCjAqX6kYUhmvZdu0Y_0NTC5xjbA&oe=648529BF" alt="Attraction 1" class="attraction-image">
+        <h3 class="attraction-name">Eyre Square</h3>
+        <a href="https://www.galwaytourism.ie/eyre-square/" class="attraction-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <div class="attraction-box">
+        <img src="https://www.hodsonbaygroup.com/wp-content/uploads/2017/05/galway_bay_hotel_salthill.jpg" alt="Attraction 1" class="attraction-image">
+        <h3 class="attraction-name">Galway Bay</h3>
+        <a href="https://www.galwaytourism.ie/galway-bay/" class="attraction-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <div class="attraction-box">
+        <img src="https://thisisgalway.ie/wp-content/uploads/2020/03/Spanish-Arch-1.jpg" alt="Attraction 1" class="attraction-image">
+        <h3 class="attraction-name">The Spanish Arch</h3>
+        <a href="https://www.galwaytourism.ie/the-spanish-arch/" class="attraction-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <div class="attraction-box">
+        <img src="https://images.squarespace-cdn.com/content/v1/5ccc3e4794d71ae57b302bde/1589376937574-CM48E07LRAAOX2QEVEZS/The+stunning+interior+of+the+Galway+Cathedral+in+Galway%2C+Ireland.?format=1000w" alt="Attraction 1" class="attraction-image">
+        <h3 class="attraction-name">Galway Cathedral</h3>
+        <a href="https://www.galwaytourism.ie/galway-cathedral/" class="attraction-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      
+
+    </div>
+
+  </div>
+
+  <div class="scroll-buttons">
+    <ion-button (click)="scrollPrev()" class="scroll-button-prev">
+      Previous
+    </ion-button>
+    <ion-button (click)="scrollNext()" class="scroll-button-next">
+      Next
+    </ion-button>
+  </div>
+</ion-content>
+
+<style>
+  .attraction-grid {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  .attraction-box {
+    width: 100vw; /* Set the width to the viewport width */
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding: 0 10px; /* Adjust as needed */
+    box-sizing: border-box;
+  }
+
+  .attraction-scroll {
+    width: 100%;
+  }
+</style>
+
+<script>
+  const scrollContainer = document.querySelector('.attraction-scroll');
+  const scrollButtonPrev = document.querySelector('.scroll-button-prev');
+  const scrollButtonNext = document.querySelector('.scroll-button-next');
+
+  const scrollPrev = () => {
+    scrollContainer.scrollBy({
+      left: -scrollContainer.clientWidth,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollNext = () => {
+  scrollContainer.scrollBy({
+    left: scrollContainer.clientWidth,
+    behavior: 'smooth'
+  });
+};
+
+scrollContainer.addEventListener('scroll', () => {
+  // Enable/disable scroll buttons based on scroll position
+  scrollButtonPrev.disabled = scrollContainer.scrollLeft === 0;
+  scrollButtonNext.disabled = scrollContainer.scrollLeft + scrollContainer.clientWidth === scrollContainer.scrollWidth;
+});
+</script>

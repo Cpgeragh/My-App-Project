@@ -1,0 +1,191 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home" routerDirection="back" class="home-button">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Hotels
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="hotel-grid-container">
+  
+  <div class="hotel-scroll">
+
+    <div class="hotel-grid">
+
+      <!-- Hotel 1 -->
+      <div class="hotel-box">
+        <img src="https://www.theconnacht.ie/files/hotel/hotel-connacht/01-hotel/Exterior/square-Connacht-Hotel-Exterior.jpg" alt="Hotel 1" class="hotel-image">
+        <h3 class="hotel-name">The Connacht Hotel</h3>
+        <a href="https://www.theconnacht.ie/" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <!-- Hotel 2 -->
+      <div class="hotel-box">
+        <img src="http://flannerys.1stgalwayhotels.com/data/Photos/958x500/12744/1274414/1274414251.JPEG" alt="Hotel 2" class="hotel-image">
+        <h3 class="hotel-name">Flannery's Hotel</h3>
+        <a href="https://www.flanneryshotelgalway.com/" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="hotel-box">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/18/eb/d0/e8/clayton-hotel-galway.jpg" alt="Hotel 1" class="hotel-image">
+        <h3 class="hotel-name">Clayton Hotel</h3>
+        <a href="https://www.claytonhotelgalway.ie/" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <!-- Hotel 2 -->
+      <div class="hotel-box">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/102687233.jpg?k=3c221056c18e132bfd70258b1465db2ad493a11477105cbb8f510da5d3bbe9d9&o=&hp=1" alt="Hotel 2" class="hotel-image">
+        <h3 class="hotel-name">Imperial Hotel</h3>
+        <a href="https://www.imperialhotelgalway.ie/" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="hotel-box">
+        <img src="https://static.leonardo-hotels.com/image/Galway%20Exterior%20Night_2048x1363_desktop_2.jpeg" alt="Hotel 1" class="hotel-image">
+        <h3 class="hotel-name">Jurys Inn</h3>
+        <a href="https://www.leonardo-hotels.com/galway/jurys-inn-galway" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <!-- Hotel 2 -->
+      <div class="hotel-box">
+        <img src="https://static21.com-hotel.com/uploads/hotel/48120/photo/salthill-hotel_152567915012.jpg" alt="Hotel 2" class="hotel-image">
+        <h3 class="hotel-name">Salthill Hotel</h3>
+        <a href="https://www.salthillhotel.com/" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="hotel-box">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-m/1280/1c/21/ea/62/eyresquarehotel2019.jpg" alt="Hotel 1" class="hotel-image">
+        <h3 class="hotel-name">Eyre Square Hotel</h3>
+        <a href="https://www.eyresquarehotel.com/" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <!-- Hotel 2 -->
+      <div class="hotel-box">
+        <img src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/171318578.jpg?k=cd202f7fb7637a446958e4173cb0519b4e0e4a92a252c90eb1b8fce2cc5edd8f&o=&hp=1" alt="Hotel 2" class="hotel-image">
+        <h3 class="hotel-name">Menlo Park Hotel</h3>
+        <a href="https://www.menloparkhotel.com/" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="hotel-box">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/71/bb/b2/exterior-image.jpg?w=700&h=-1&s=1" alt="Hotel 1" class="hotel-image">
+        <h3 class="hotel-name">Maldron Hotel</h3>
+        <a href="https://www.maldronhotelsandyroadgalway.com/" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>     
+      </div>
+
+      <!-- Hotel 10 -->
+      <div class="hotel-box">
+        <img src="https://www.noxhotelgalway.ie/cmsGallery/imagerow/8061/resized/1600x854/nox_1600_x_854_px.jpg" alt="Hotel 10" class="hotel-image">
+        <h3 class="hotel-name">The Nox Hotel</h3>
+        <a href="https://www.noxhotelgalway.ie/index.html" class="hotel-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="scroll-buttons">
+    <ion-button (click)="scrollPrev()" class="scroll-button-prev">
+      Previous
+    </ion-button>
+    <ion-button (click)="scrollNext()" class="scroll-button-next">
+      Next
+    </ion-button>
+  </div>
+</ion-content>
+
+<style>
+  .hotel-grid {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  .hotel-box {
+    width: 100vw; /* Set the width to the viewport width */
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding: 0 10px; /* Adjust as needed */
+    box-sizing: border-box;
+  }
+
+  .hotel-scroll {
+    width: 100%;
+  }
+</style>
+
+<script>
+  const scrollContainer = document.querySelector('.hotel-scroll');
+  const scrollButtonPrev = document.querySelector('.scroll-button-prev');
+  const scrollButtonNext = document.querySelector('.scroll-button-next');
+
+  const scrollPrev = () => {
+    scrollContainer.scrollBy({
+      left: -scrollContainer.clientWidth,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollNext = () => {
+  scrollContainer.scrollBy({
+    left: scrollContainer.clientWidth,
+    behavior: 'smooth'
+  });
+};
+
+scrollContainer.addEventListener('scroll', () => {
+  // Enable/disable scroll buttons based on scroll position
+  scrollButtonPrev.disabled = scrollContainer.scrollLeft === 0;
+  scrollButtonNext.disabled = scrollContainer.scrollLeft + scrollContainer.clientWidth === scrollContainer.scrollWidth;
+});
+</script>

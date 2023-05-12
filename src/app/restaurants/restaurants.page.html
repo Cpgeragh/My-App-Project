@@ -1,0 +1,147 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home" routerDirection="back" class="home-button">
+        <ion-icon name="home"></ion-icon>
+        Home
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Restaurants
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="restaurant-grid-container">
+  
+  <div class="restaurant-scroll">
+
+    <div class="restaurant-grid">
+
+      <!-- Hotel 1 -->
+      <div class="restaurant-box">
+        <img src="https://www.theirishroadtrip.com/wp-content/uploads/2020/08/dela-galway-1.jpg.webp" alt="Restaurant 1" class="restaurant-image">
+        <h3 class="restaurant-name">dela</h3>
+        <a href="https://dela.ie/" class="restaurant-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>     
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="restaurant-box">
+        <img src="https://www.theirishroadtrip.com/wp-content/uploads/2018/08/dough-bros-galway-min.jpg.webp" alt="Restaurant 1" class="restaurant-image">
+        <h3 class="restaurant-name">The Dough Bros</h3>
+        <a href="https://www.thedoughbros.ie/" class="restaurant-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>     
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="restaurant-box">
+        <img src="https://www.theirishroadtrip.com/wp-content/uploads/2020/08/Handsome-Burger-1.jpg.webp" alt="Restaurant 1" class="restaurant-image">
+        <h3 class="restaurant-name">Handsome Burger</h3>
+        <a href="https://handsomeburger.com/" class="restaurant-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>     
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="restaurant-box">
+        <img src="https://www.theirishroadtrip.com/wp-content/uploads/2020/08/hooked-galway-1.jpg.webp" alt="Restaurant 1" class="restaurant-image">
+        <h3 class="restaurant-name">Hooked</h3>
+        <a href="https://hookedgalway.ie/" class="restaurant-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>     
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="restaurant-box">
+        <img src="https://www.theirishroadtrip.com/wp-content/uploads/2020/08/wa-cafe-1.jpg.webp" alt="Restaurant 1" class="restaurant-image">
+        <h3 class="restaurant-name">Wa Sushi</h3>
+        <a href="https://www.wacafe.net/#/" class="restaurant-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>     
+      </div>
+
+      <!-- Hotel 1 -->
+      <div class="restaurant-box">
+        <img src="https://images.squarespace-cdn.com/content/v1/5cc717d716b6407fa71c233a/1564658207762-VFLX04H5J5SFK0I3Q740/MC1_6645.jpg?format=1500w" alt="Restaurant 1" class="restaurant-image">
+        <h3 class="restaurant-name">Kai Restaurant</h3>
+        <a href="https://www.kairestaurant.ie/" class="restaurant-link">Visit Website</a>
+        <div class="gps-link">
+          <ion-button (click)="getGPS()">Get Your GPS Location</ion-button>
+          <h6>{{long}}, {{lat}}</h6>
+        </div>     
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="scroll-buttons">
+    <ion-button (click)="scrollPrev()" class="scroll-button-prev">
+      Previous
+    </ion-button>
+    <ion-button (click)="scrollNext()" class="scroll-button-next">
+      Next
+    </ion-button>
+  </div>
+</ion-content>
+
+<style>
+  .restaurant-grid {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  .restaurant-box {
+    width: 100vw; /* Set the width to the viewport width */
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding: 0 10px; /* Adjust as needed */
+    box-sizing: border-box;
+  }
+
+  .restaurant-scroll {
+    width: 100%;
+  }
+</style>
+
+<script>
+  const scrollContainer = document.querySelector('.restaurant-scroll');
+  const scrollButtonPrev = document.querySelector('.scroll-button-prev');
+  const scrollButtonNext = document.querySelector('.scroll-button-next');
+
+  const scrollPrev = () => {
+    scrollContainer.scrollBy({
+      left: -scrollContainer.clientWidth,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollNext = () => {
+  scrollContainer.scrollBy({
+    left: scrollContainer.clientWidth,
+    behavior: 'smooth'
+  });
+};
+
+scrollContainer.addEventListener('scroll', () => {
+  // Enable/disable scroll buttons based on scroll position
+  scrollButtonPrev.disabled = scrollContainer.scrollLeft === 0;
+  scrollButtonNext.disabled = scrollContainer.scrollLeft + scrollContainer.clientWidth === scrollContainer.scrollWidth;
+});
+</script>
